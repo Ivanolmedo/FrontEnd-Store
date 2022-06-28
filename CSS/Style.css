@@ -1,0 +1,245 @@
+:root{
+    --primario: #9C27B0;
+    --primarioOscuro: #89119D;
+    --secundario: #FFCE00;
+    --secundarioOscuro: rgb(233,238,2);
+    --negro: #000;
+    --blanco: #FFF;
+
+    --FuentePrincipal:'Staatliches', cursive;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before,*:after{
+    box-sizing: inherit;
+}
+
+
+body{
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.Contenedor{
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+h1,h2,h3{
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--FuentePrincipal);
+}
+
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2.4rem;
+}
+
+/**header**/
+.header{
+}
+.header__logotipo{
+    margin: 3rem 0;
+    justify-content: center;
+    display: flex;
+}
+
+/**footer**/
+.footer{
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+
+}
+.footer__texto{
+    text-align: center;
+    font-family: var(--FuentePrincipal);
+    font-size: 2.2rem;
+}
+
+/**Navegacion**/
+.Navegacion{
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;  
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
+}
+
+.Navegacion__Enlace{
+    font-family: var(--FuentePrincipal);
+    color: var(--blanco);
+    font-size: 2rem;
+}
+
+.Navegacion__Enlace--Activo,
+.Navegacion__Enlace:hover{
+    color: var(--secundario);
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 5rem;
+}
+@Media (min-width: 768px){ 
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.Producto{
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+}
+.Producto__Nombre{
+    font-size: 4.8rem;
+
+}
+.Producto__Precio{
+    font-size: 2.8rem;
+    color: #FFCE00;
+}
+.Producto__Nombre,
+.Producto__Precio{
+    text-align: center;
+    font-family: var(--FuentePrincipal);
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+.Producto__Imagen{
+    width: 100%;
+}
+
+/**graficos**/
+
+.grafico{
+    height: 30rem;
+    background-size: cover;
+}
+.grafico_superior{
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafico_inferior{
+    background-image: url(../img/grafico2.jpg);
+    grid-column: 1 / 3;
+    grid-row: 8/9;
+}
+
+@Media (min-width: 768px){ 
+    .grafico_inferior{
+        grid-row: 5 / 6;
+        grid-column: 2 / 4; 
+    } 
+}
+/**nosotros**/
+
+@Media (min-width: 768px){ 
+    .Nosotros{
+      grid-template-columns: repeat(2, 1fr);    
+        column-gap: 2rem;
+    }
+}
+.Nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+.Nosotros_Imagen{
+    grid-row: 1 / 2;
+}
+@Media (min-width: 768px){ 
+ .nosotros_Imagen{
+    grid-column: 2 / 3;
+ }
+}
+
+/**Bloques**/
+
+.Bloques{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@Media (min-width: 768px){ 
+    .Bloques{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.Bloque{
+ text-align: center;
+}
+
+.Bloque_Titulo{
+    margin: 0;
+}
+
+
+/**Producto**/
+
+@Media (min-width: 768px){ 
+ .Camisa{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    column-gap: 2rem;
+ }
+}
+
+.Formulario{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.Formulario__Campo{
+    border-color: var(--primarioOscuro);
+    border-width: 1rem;
+    border-style: solid;
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+
+.Formulario__Submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--FuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1 / 3;
+}
+
+.Formulario__Submit:hover{
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
